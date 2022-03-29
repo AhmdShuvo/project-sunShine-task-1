@@ -10,7 +10,8 @@ const SignUp = () => {
 const location =useLocation()
 const navigate=useNavigate()
  const [logInData,setData]=useState({})
- const url=location.state?.from.pathname||"/"
+ const url=location.state?.from.pathname||'/services';
+ console.log(url);
 
   const handleChange=e=>{
    const field= e.target.name

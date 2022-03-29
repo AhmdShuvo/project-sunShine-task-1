@@ -13,7 +13,7 @@ const Header = () => {
   const userIcon=<FontAwesomeIcon icon={faUserCircle}/>
 
     //  Destructuring from firebase Hook //
-  const {user,LogOUt}=useAuth()
+  const {user,LogOUt,setIsLoadng}=useAuth()
 
     return (
      
@@ -26,9 +26,8 @@ const Header = () => {
   <Navbar.Collapse id="responsive-navbar-nav">
     <Nav className="me-auto">
       <NavLink className="navbar-brand border border-info p-2 m-2" to="/">Home</NavLink>
-      <NavLink className="navbar-brand border border-info p-2 m-2" to="/services">Services</NavLink>
+      <NavLink onClick={()=>setIsLoadng(false)} className="navbar-brand border border-info p-2 m-2" to="/services">Services</NavLink>
       <NavLink className="navbar-brand border border-info p-2 m-2" to="/about">About</NavLink>
-      <NavLink className="navbar-brand border border-info p-2 m-2" to="/case">Case studies</NavLink>
       {!user.displayName?<NavLink className="navbar-brand border border-info p-2 m-2" to="/login">Log in  {loginIcon}</NavLink>:<a onClick={LogOUt} className="navbar-brand border border-info p-2 m-2" href="/">Sign Out {loginIcon}</a>}
     </Nav>
     <h1>{userIcon} {user.displayName} </h1>

@@ -31,7 +31,7 @@ const Service = ({service}) => {
         <h5>cost : ${price} </h5>
         </Card.Body>
 
-        <center> <Link to ={url}><button onClick={setIsLoadng(false)} className="btn-info p-3 text-light fs-5 container-fluid">Details    {detailIcon} </button></Link></center>
+        <center> <Link to ={url}><button  className="btn-info p-3 text-light fs-5 container-fluid">Details    {detailIcon} </button></Link></center>
       </Card>
     </Col>
         </div>
